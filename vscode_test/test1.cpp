@@ -1,6 +1,6 @@
 #include<iostream>
 #include<iomanip>
-#include "src_t.h"
+#include "../include/src_t.h"
 void print(int a, double b, const std::string& c) {
     std::cout << a << " " << b << " " << c << std::endl; // 打印三个参数到控制台
 }

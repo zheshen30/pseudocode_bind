@@ -1,8 +1,17 @@
-# pseudocode_bind
-this is pseudocode for stl bind
-# introduction
-The pseudo-code actually imitate and extends the standard template library, but there are some function don't realized in this pseudo-code. 
-In the standard library, if you want to bind a class's non-static member function, the second parameter must be an object pointer or reference type (std::ref()). However, in this case, you can directly pass the value type of the object without the need for ref wrapping.  However, such an approach is not allowed in the standard library. Therefore, in the standard library, the second parameter cannot be a temporary object, but in this pseudo-code, it can be.
+[English Version](README_en.md)
 
-# something can be improved:
-In this pseudocode, the argunment cannot be a smart pointer, but in the standard library, the pointer can be a smart pointer. This is something can be improved
+# Pseudocode Bind
+
+## 项目简介
+本项目提供了一个针对 C++ 标准模板库 (STL) 中 `bind` 函数的伪代码实现。它不仅模仿了标准库的核心行为，还针对部分使用场景进行了灵活的功能扩展。
+
+## 核心特性
+在标准的 C++ 库中，当绑定一个类的非静态成员函数时，其第二个参数受到严格限制，必须是对象指针或引用类型（通常需要借助引用包装）。本项目的实现打破了这一限制：
+* **免除引用包装**：可以直接传递对象的值类型，省去了额外的包装步骤，调用更加直观。
+* **兼容临时对象**：与标准库禁止第二个参数传入临时对象的规则不同，本伪代码实现允许并支持直接使用临时对象，极大简化了调用流程。
+
+## 待优化项
+当前的实现版本仍有进一步完善的空间。与标准库完美支持智能指针作为参数不同，目前该伪代码实现暂不支持传入智能指针。这是后续更新中计划改进的核心方向。
+
+## 开源协议
+本项目遵循 GPL (GNU General Public License) 开源许可协议。
